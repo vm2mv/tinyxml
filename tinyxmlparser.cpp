@@ -1600,6 +1600,10 @@ const char* TiXmlDeclaration::Parse( const char* p, TiXmlParsingData* data, TiXm
 		}
 
 		p = SkipWhiteSpace( p, _encoding );
+		if ( !p || !*p )
+		{
+			break;
+		}
 		if ( StringEqual( p, "version", true, _encoding ) )
 		{
 			TiXmlAttribute attrib;
